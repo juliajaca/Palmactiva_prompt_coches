@@ -75,7 +75,32 @@
         * Bloque MAIN
         *
       -->
-      
+      <script type= "text/javascript">
+
+        // prompt para recoger datos del usuario
+        var usuario = String(prompt('¿Cómo te llamas?')); 
+        var primerCoche = String(prompt('¿Cuál fue el primer coche que tuviste?'));
+        var segundoCoche = String(prompt('¿Cuál fue el segundo coche que tuviste?'));
+        var tercerCoche = String(prompt('¿Cuál fue el tercer coche que tuviste?'));
+
+        //creo el array con los coches del usuario
+        var coches = [primerCoche, segundoCoche, tercerCoche];
+
+        // escribo por consola y en el html el nombre del usuario
+        document.write(`Hola ${usuario}<br>`);
+        console.log(`Hola ${usuario}`);
+
+        // función para escribir por consola y en el html una marca de coche
+        function misMarcasCoches(coche) {
+          console.log(`Este fue uno de tus coches: ${coche}.`);
+          document.write(`Este fue uno de tus coches: ${coche}.<br>`);
+        }
+
+        //bucle que recorre el array de coches y que llama a la función que escribe las marcas
+        for (var coche of coches) {
+	        misMarcasCoches(coche);
+        }
+      </script>
           <section>
             <!--
              *
