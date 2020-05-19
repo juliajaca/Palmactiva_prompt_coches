@@ -1,131 +1,110 @@
-﻿<!DOCTYPE html>
+﻿<script type="text/javascript">
+
+  // prompt para recoger datos del usuario
+  var usuario = String(prompt('¿Cómo te llamas?'));
+  var primerCoche = String(prompt('¿Cuál fue el primer coche que tuviste?'));
+  var segundoCoche = String(prompt('¿Cuál fue el segundo coche que tuviste?'));
+  var tercerCoche = String(prompt('¿Cuál fue el tercer coche que tuviste?'));
+
+  //creo el array con los coches del usuario
+  var coches = [{
+    marca: primerCoche,
+    imagen: '_assets/img/desktop/@1x/coche1.png'
+  },
+  {
+    marca: segundoCoche,
+    imagen: '_assets/img/desktop/@1x/coche2.png'
+  },
+  {
+    marca: tercerCoche,
+    imagen: '_assets/img/desktop/@1x/coche3.png'
+  }];
+
+  // función para escribir por consola y en el html una marca de coche
+  function misMarcasCoches(coche) {
+    console.log(`Este fue uno de tus coches: ${coche.marca}.`);
+    document.write(`<figure> 
+            <img src=${coche.imagen} alt="${coche.marca}">
+            <figcaption>
+             Marca: ${coche.marca}
+             </figcaption>
+             </figure>`);
+  }
+</script>
+
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Metadatos Web -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- HTML Meta Tags -->
-    <title>Plantilla</title>
-    <meta name="description" content="" />
+<head>
+  <!-- Metadatos Web -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="" />
-    <meta itemprop="description" content="" />
-    <meta itemprop="image" content="http://" />
+  <!-- HTML Meta Tags -->
+  <title>Marcas de coches</title>
+  <meta name="description" content="" />
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="http://" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="http://" />
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="" />
+  <meta itemprop="description" content="" />
+  <meta itemprop="image" content="http://" />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SEAT" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="http://" />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="http://" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="http://" />
 
-    <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-      crossorigin="anonymous"
-    />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SEAT" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="http://" />
 
-    <!-- Nuestro Framework de CSS preferido, mi preferido es BULMA -->
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />    
-    
-    <!-- Nuestro CSS Compilado a través de SASS ó sin compilar solo CSS básico -->
-    <link rel="stylesheet" href="css/estilos.css" />
-    
-  </head>
-  <body>
-    <header>
-      <!--
-        *
-        * Bloque HEADER
-        *
-      -->
-           <figure id="logo">
-            <!--
-             *
-             * Bloque LOGO
-             *
-            -->
-                <img src="" alt="">
-           </figure>
-      
-           <nav id="navegacionPrincipal">
-            <!--
-             *
-             * Bloque Links de Navegación Principal
-             *
-            -->
-          </nav>
-      
-    </header>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 
-    <main>
-      <!--
-        *
-        * Bloque MAIN
-        *
-      -->
-      <script type= "text/javascript">
+  <!-- Nuestro Framework de CSS preferido, mi preferido es BULMA -->
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
 
-        // prompt para recoger datos del usuario
-        var usuario = String(prompt('¿Cómo te llamas?')); 
-        var primerCoche = String(prompt('¿Cuál fue el primer coche que tuviste?'));
-        var segundoCoche = String(prompt('¿Cuál fue el segundo coche que tuviste?'));
-        var tercerCoche = String(prompt('¿Cuál fue el tercer coche que tuviste?'));
+  <!-- Nuestro CSS Compilado a través de SASS ó sin compilar solo CSS básico -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
 
-        //creo el array con los coches del usuario
-        var coches = [primerCoche, segundoCoche, tercerCoche];
+</head>
 
+<body>
+  <header>
+    <figure id="logo">
+      <img src="_assets/img/desktop/@1x/persona.png" alt="usuario">
+      <script type="text/javascript">
         // escribo por consola y en el html el nombre del usuario
-        document.write(`Hola ${usuario}<br>`);
+        document.write(`<figcaption>Hola ${usuario}</figcaption>`);
         console.log(`Hola ${usuario}`);
-
-        // función para escribir por consola y en el html una marca de coche
-        function misMarcasCoches(coche) {
-          console.log(`Este fue uno de tus coches: ${coche}.`);
-          document.write(`Este fue uno de tus coches: ${coche}.<br>`);
-        }
-
-        //bucle que recorre el array de coches y que llama a la función que escribe las marcas
-        for (var coche of coches) {
-	        misMarcasCoches(coche);
-        }
       </script>
-          <section>
-            <!--
-             *
-             * Bloque SECTION
-             *
-            -->
-         
-          </section>
-      
-          <article>
-            <!--
-             *
-             * Bloque ARTICLE
-             *
-            -->
-          </article>
-      
-    </main>
+    </figure>
+    <hr>
+  </header>
 
-    <footer>
-      <!--
+  <main>
+    <script type="text/javascript">
+      //bucle que recorre el array de coches y que llama a la función que escribe las marcas
+      for (var coche of coches) {
+        misMarcasCoches(coche);
+      }
+    </script>
+  </main>
+
+  <footer>
+    <!--
         *
         * Bloque FOOTER
         *
         -->
-    </footer>
-  </body>
+  </footer>
+</body>
+
 </html>
